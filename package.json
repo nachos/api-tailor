@@ -1,0 +1,36 @@
+{
+  "name": "route-mapper",
+  "version": "1.0.0",
+  "description": "A small utility to map rest apis",
+  "main": "lib\\index.js",
+  "scripts": {
+    "test": "gulp test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/nachos/route-mapper.git"
+  },
+  "keywords": [
+    "route",
+    "map",
+    "rest",
+    "api",
+    "request"
+  ],
+  "author": "Nachos team",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/nachos/route-mapper/issues"
+  },
+  "homepage": "https://github.com/nachos/route-mapper",
+  "dependencies": {
+    "lodash": "^3.8.0",
+    "request": "^2.55.0",
+    "url-join": "0.0.1"
+  },
+  "devDependencies": {
+    "gulp": "^3.8.11",
+    "gulp-jshint": "^1.10.0",
+    "jshint-stylish": "^1.0.2"
+  }
+}
