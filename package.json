@@ -1,18 +1,19 @@
 {
-  "name": "route-mapper",
+  "name": "api-tailor",
   "version": "1.0.0",
-  "description": "A small utility to map rest apis",
+  "description": "A tool to swiftly tailor a fitting api",
   "main": "lib\\index.js",
   "scripts": {
     "test": "gulp test"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/nachos/route-mapper.git"
+    "url": "https://github.com/nachos/api-tailor.git"
   },
   "keywords": [
-    "route",
-    "map",
+    "tailor",
+    "swift",
+    "mapper",
     "rest",
     "api",
     "request"
@@ -20,9 +21,9 @@
   "author": "Nachos team",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/nachos/route-mapper/issues"
+    "url": "https://github.com/nachos/api-tailor/issues"
   },
-  "homepage": "https://github.com/nachos/route-mapper",
+  "homepage": "https://github.com/nachos/api-tailor",
   "dependencies": {
     "lodash": "^3.8.0",
     "request": "^2.55.0",
