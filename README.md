@@ -1,2 +1,2 @@
-# route-mapper [![Build Status](https://travis-ci.org/nachos/route-mapper.svg)](https://travis-ci.org/nachos/route-mapper)
-A small utility to map rest apis
+# api-tailor [![Build Status](https://travis-ci.org/nachos/api-tailor.svg)](https://travis-ci.org/nachos/api-tailor)
+A tool to swiftly tailor a fitting api
