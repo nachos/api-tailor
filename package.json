@@ -31,6 +31,7 @@
   "homepage": "https://github.com/nachos/api-tailor",
   "dependencies": {
     "async": "^1.2.1",
+    "debug": "^2.2.0",
     "lodash": "^3.8.0",
     "request": "^2.55.0",
     "url-join": "0.0.1"
