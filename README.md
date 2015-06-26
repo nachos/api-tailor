@@ -44,8 +44,27 @@ A tool to swiftly tailor a fitting api
 
 ## Examples
 ``` js
-var apiTailor = require('api-tailor');
+var tailor = require('api-tailor');
 
+var client = tailor({
+    host: 'http://yourserver.com/api',
+    resources: {
+      customers: {
+        all: {
+          method: 'GET',
+          path: '/'
+        },
+        byName: {
+          method: 'GET',
+          path: '/:name'
+        }
+      }
+    }
+  });
+
+
+client.customers.all(); -> get request to http://yourserver.com/api/customers/all
+client.customers.byName('nacho') -> get request to http://yourserver.com/api/customers/nacho
 ```
 
 ## Run Tests
