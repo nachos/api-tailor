@@ -33,11 +33,13 @@
     "async": "^1.2.1",
     "debug": "^2.2.0",
     "lodash": "^3.8.0",
+    "q": "^1.4.1",
     "request": "^2.55.0",
     "url-join": "0.0.1"
   },
   "devDependencies": {
     "chai": "^3.0.0",
+    "chai-as-promised": "^5.1.0",
     "git-validate": "^2.0.2",
     "gulp": "^3.9.0",
     "gulp-bump": "^0.3.1",
@@ -49,6 +51,10 @@
     "gulp-util": "^3.0.5",
     "jshint-stylish": "^2.0.1",
     "lazypipe": "^0.2.4",
-    "run-sequence": "^1.1.1"
+    "mock-require": "^1.0.5",
+    "mockery": "^1.4.0",
+    "run-sequence": "^1.1.1",
+    "sinon": "^1.15.3",
+    "sinon-chai": "^2.8.0"
   }
 }
