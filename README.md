@@ -6,7 +6,7 @@ A tool to swiftly tailor a fitting api
   <thead>
     <tr>
       <th>Linux</th>
-      <th>OS X</th>
+      <th>OSX</th>
       <th>Windows</th>
       <th>Coverage</th>
       <th>Dependencies</th>
