@@ -19,7 +19,7 @@ A tool to swiftly tailor a fitting api
         <a href="https://travis-ci.org/nachos/api-tailor"><img src="https://img.shields.io/travis/nachos/api-tailor.svg?style=flat-square"></a>
       </td>
       <td align="center">
-        <a href="https://ci.appveyor.com/project/noamokman/api-tailor"><img src="https://img.shields.io/appveyor/ci/noamokman/api-tailor.svg?style=flat-square"></a>
+        <a href="https://ci.appveyor.com/project/noamokman/api-tailor"><img src="https://img.shields.io/appveyor/ci/nachos/api-tailor.svg?style=flat-square"></a>
       </td>
       <td align="center">
 <a href='https://coveralls.io/r/nachos/api-tailor'><img src='https://img.shields.io/coveralls/nachos/api-tailor.svg?style=flat-square' alt='Coverage Status' /></a>
