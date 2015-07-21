@@ -63,8 +63,8 @@ var client = tailor({
   });
 
 
-client.customers.all(); -> get request to http://yourserver.com/api/customers/all
-client.customers.byName({ name: 'nacho' }) -> get request to http://yourserver.com/api/customers/nacho
+client.customers.all(); // -> get request to http://yourserver.com/api/customers/all
+client.customers.byName({ name: 'nacho' }) // -> get request to http://yourserver.com/api/customers/nacho
 ```
 
 ## Run Tests
