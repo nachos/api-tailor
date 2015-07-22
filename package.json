@@ -34,7 +34,7 @@
     "debug": "^2.2.0",
     "lodash": "^3.10.0",
     "q": "^1.4.1",
-    "request": "^2.59.0",
+    "request": "^2.60.0",
     "url-join": "0.0.1"
   },
   "devDependencies": {
