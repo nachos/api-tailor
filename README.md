@@ -39,7 +39,7 @@ A tool to swiftly tailor a fitting api
 
 ## Installation
 ``` bash
-  $ [sudo] npm install api-tailor --save
+$ [sudo] npm install api-tailor --save
 ```
 
 ## Examples
@@ -54,6 +54,10 @@ var client = tailor({
           method: 'GET',
           path: '/'
         },
+        add: {
+          method: 'POST',
+          path: '/'
+        },
         byName: {
           method: 'GET',
           path: '/:name'
@@ -62,14 +66,45 @@ var client = tailor({
     }
   });
 
+client.customers.all()
+  .then(function(customers) {
+    // customers -> all data from get request to http://yourserver.com/api/customers/all
+  });
+  
+client.customers.add({ name: 'nacho', address: 'nachos home 25, dip mountain, taco-ville' })
+  .then(function() {
+    // -> post request to http://yourserver.com/api/customers/
+  });
+  
+client.customers.byName({}, { name: 'nacho' })
+  .then(function(customer) {
+    // customer -> get request to http://yourserver.com/api/customers/nacho
+  });
+```
 
-client.customers.all(); // -> get request to http://yourserver.com/api/customers/all
-client.customers.byName({ name: 'nacho' }) // -> get request to http://yourserver.com/api/customers/nacho
+### Injectors
+Use injectors to intercept outgoing or incoming data and manpulate it.
+
+#### Token Injector Example
+```js
+  var token;
+
+  client.inject({
+    request: function (request) {
+      request.headers = request.headers || {};
+
+      if (token) {
+        request.headers.Authorization = 'Bearer ' + token;
+      }
+
+      return Q.resolve(request);
+    }
+  });
 ```
 
 ## Run Tests
 ``` bash
-  $ npm test
+$ npm test
 ```
 
 ## License
