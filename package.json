@@ -30,7 +30,6 @@
   },
   "homepage": "https://github.com/nachos/api-tailor",
   "dependencies": {
-    "async": "^1.4.0",
     "debug": "^2.2.0",
     "lodash": "^3.10.0",
     "path-to-regexp": "^1.2.0",
@@ -49,10 +48,8 @@
     "gulp-jscs": "^1.6.0",
     "gulp-jshint": "^1.11.2",
     "gulp-mocha": "^2.1.3",
-    "gulp-util": "^3.0.6",
     "jshint-stylish": "^2.0.1",
     "lazypipe": "^1.0.1",
-    "mock-require": "^1.0.5",
     "mockery": "^1.4.0",
     "run-sequence": "^1.1.2",
     "sinon": "^1.15.4",
