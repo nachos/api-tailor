@@ -60,7 +60,7 @@ describe('api-tailor', function () {
       });
     });
 
-    describe('get', function () {
+    describe('action', function () {
       var apiTailor;
 
       describe('with request error', function () {
@@ -212,6 +212,65 @@ describe('api-tailor', function () {
           return expect(api.data.get()).eventually.to.equal(JSON.stringify({test: 'data'}));
         });
       });
+
+      describe('with stream request', function () {
+        var streamConfig = {
+          host: 'http://www.nachosaddress.com/api/',
+          resources: {
+            data: {
+              post: {
+                method: 'POST',
+                path: '/',
+                data: 'form',
+                stream: true
+              }
+            }
+          }
+        };
+        var requestStub;
+
+        before(function () {
+          requestStub = function () {
+            return {
+              on: function (s, fn) {
+                fn({statusCode: 200});
+
+                return {
+                  pipe: function () {
+                  }
+                };
+              }
+            };
+          };
+
+          mockery.registerMock('request', requestStub);
+
+          mockery.enable({
+            useCleanCache: true,
+            warnOnReplace: false,
+            warnOnUnregistered: false
+          });
+
+          apiTailor = require('../lib');
+        });
+
+        after(function () {
+          mockery.deregisterMock('request');
+          mockery.disable();
+        });
+
+        it('should accept formData', function () {
+          var api = apiTailor(streamConfig);
+
+          return expect(api.data.post({test: 'test'})).eventually.to.have.property('pipe');
+        });
+
+        it('should return stream', function () {
+          var api = apiTailor(streamConfig);
+
+          return expect(api.data.post()).eventually.to.have.property('pipe');
+        });
+      });
     });
 
     describe('inject function', function () {
@@ -269,4 +328,5 @@ describe('api-tailor', function () {
       });
     });
   });
-});
+})
+;
