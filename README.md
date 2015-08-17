@@ -60,7 +60,17 @@ var client = tailor({
         },
         byName: {
           method: 'GET',
-          path: '/:name'
+          path: '/:name' // url parameter
+        },
+        downloadLog: {
+          method: 'GET',
+          path: '/log',
+          stream: true // response will return as stream
+        },
+        uploadLog: {
+          method: 'POST',
+          path: '/log',
+          data: 'form' // data given will be treated as form data
         }
       }
     }
@@ -79,6 +89,16 @@ client.customers.add({ name: 'nacho', address: 'nachos home 25, dip mountain, ta
 client.customers.byName({}, { name: 'nacho' })
   .then(function(customer) {
     // customer -> get request to http://yourserver.com/api/customers/nacho
+  });
+  
+client.customers.downloadLog()
+  .then(function(stream) {
+    stream.pipe(process.stdout); // stream -> get request to http://yourserver.com/api/customers/log
+  });
+  
+client.customers.uploadLog({file: fs.createReadStream('file.txt')})
+  .then(function() {
+    // -> post request to http://yourserver.com/api/customers/log
   });
 ```
 
