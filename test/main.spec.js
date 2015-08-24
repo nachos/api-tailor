@@ -45,7 +45,14 @@ describe('api-tailor', function () {
   describe('with valid configuration', function () {
     var goodConfigObject = {
       host: 'http://www.nachosaddress.com/api',
-      resources: {data: {get: {method: 'GET', path: '/'}}}
+      resources: {
+        data: {
+          get: {
+            method: 'GET',
+            path: '/'
+          }
+        }
+      }
     };
 
     describe('exports', function () {
@@ -140,14 +147,26 @@ describe('api-tailor', function () {
         it('should reject when server returns status code error', function () {
           var api = apiTailor(goodConfigObject);
 
-          return expect(api.data.get()).to.be.rejectedWith(JSON.stringify({response: {statusCode: 500}, body: null}));
+          return expect(api.data.get()).to.be.rejectedWith(JSON.stringify({
+            response: {
+              statusCode: 500
+            },
+            body: null
+          }));
         });
       });
 
       describe('with valid request', function () {
         var paramConfig = {
           host: 'http://www.nachosaddress.com/api/',
-          resources: {data: {get: {method: 'GET', path: '/:test'}}}
+          resources: {
+            data: {
+              get: {
+                method: 'GET',
+                path: '/:test'
+              }
+            }
+          }
         };
         var requestStub;
 
