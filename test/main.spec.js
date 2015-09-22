@@ -147,12 +147,12 @@ describe('api-tailor', function () {
         it('should reject when server returns status code error', function () {
           var api = apiTailor(goodConfigObject);
 
-          return expect(api.data.get()).to.be.rejectedWith(JSON.stringify({
+          return expect(api.data.get()).to.be.rejectedWith({
             response: {
               statusCode: 500
             },
             body: null
-          }));
+          });
         });
       });
 
