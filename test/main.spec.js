@@ -225,6 +225,19 @@ describe('api-tailor', function () {
           return expect(api.data.get()).to.be.rejectedWith('This means something wrong happened when intercepting the response');
         });
 
+        it('should reject when the interceptor gives a response with an error code', function () {
+          var api = apiTailor(goodConfigObject);
+          var res = { response: { statusCode: 401 }};
+
+          api.inject({
+            response: function () {
+              return Q.resolve(res);
+            }
+          });
+
+          return expect(api.data.get()).to.be.rejectedWith(res);
+        });
+
         it('should return the proper body object of the message', function () {
           var api = apiTailor(goodConfigObject);
 
